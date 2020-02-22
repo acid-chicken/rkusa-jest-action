@@ -1,10 +1,6 @@
-Does not work with the release version of Github actions anymore, use [Problem Matchers](https://github.com/actions/toolkit/blob/master/docs/commands.md#problem-matchers) instead.
+# GitHub Action for Jest (with Annotations)
 
----
-
-# Github Action for Jest (with Annotations)
-
-This Action runs your [Jest](https://github.com/facebook/jest) test suite and adds annotations to the Github check the action is run in.
+This Action runs your [Jest](https://github.com/facebook/jest) test suite and adds annotations to the GitHub check the action is run in.
 
 Annotaiton Example: https://github.com/rkusa/jest-action-example/pull/1/files
 
@@ -33,7 +29,7 @@ action "Jest" {
 
 ### Secrets
 
-* `GITHUB_TOKEN` - **Required**. Required to add annotations to the check that is executing the Github action.
+* `GITHUB_TOKEN` - **Required**. Required to add annotations to the check that is executing the GitHub action.
 
 ### Environment variables
 
@@ -51,7 +47,7 @@ action "Jest" {
 }
 ```
 
-... or the Github repo:
+... or the GitHub repo:
 
 ```hcl
 action "Jest" {

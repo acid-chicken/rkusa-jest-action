@@ -56,7 +56,11 @@ func main() {
 	action := ghactions.NewAction(ctx)
 
 	action.OnPush(func(client *github.Client, event *github.PushEvent) error {
-		return handlePush(ctx, client, event, report)
+		return handle(ctx, client, report)
+	})
+
+	action.OnPullRequest(func(client *github.Client, event *github.PullRequestEvent) error {
+		return handle(ctx, client, report)
 	})
 
 	if err := action.Run(); err != nil {
@@ -64,7 +68,7 @@ func main() {
 	}
 }
 
-func handlePush(ctx context.Context, client *github.Client, event *github.PushEvent, report Report) error {
+func handle(ctx context.Context, client *github.Client, report Report) error {
 	if report.Success {
 		return nil
 	}
